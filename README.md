@@ -1,73 +1,64 @@
-# Desafio Backend
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Problema
-A idez é uma fintech que busca oferecer tecnologia de ponta para outras empresas do ecosistema financeiro. Um dos passos necessários para completarmos essa missão é implementar a criação de contas para utilização do nosso aplicativo em diferentes plataformas. 
-É importante lembrar que o seu sistema será integrado aos nossos painéis internos e ao aplicativo.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Todo o processo começa com a criação de um Usuário. Um usuário pode ter mais de um tipo de conta vinculada a ele. 
-De um **Usuário (User)**, queremos saber seu `Nome Completo`, `CPF`, `Número de Telefone`, `e-mail` e `Senha`. 
-CPFs e e-mails devem ser únicos no sistema. Sendo assim, seu sistema deve permitir apenas um cadastro com o mesmo CPF ou endereço de e-mail.
+## About Laravel
 
-Os tipos de conta que existem na idez são **Empresarial (Company)** e **Pessoal (Person)**. Todas as contas sempre estarão vinculadas a um usuário e possuem alguns dados em comum: `Id da Conta`, `Agência`, `Número` e `Dígito`. 
-De uma conta empresarial queremos saber a `Razão Social`, o `Nome Fantasia`, o `CNPJ`, além do `id de Usuário` que será dono dessa conta. 
-De uma conta pessoal, queremos saber apenas seu `Nome` e `CPF`, além do `id de Usuário` que será dono dessa conta. 
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-Os documentos (cpf e cnpj) devem ser únicos dentro do sistema, mesmo entre contas de tipos diferentes.
-Devido a algumas limitações do sistema, **cada Usuário pode ter apenas uma conta de cada tipo**.
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Seu sistema deve ser capaz de listar todos os usuários, além de conseguir trazer informações detalhadas de um usuário específico. 
-Durante a listagem, deve ser possível filtar os resultados por `Nome` ou `Documento`.
-Para fins didáticos, sua busca deve considerar apenas resultados que comecem com a string especificada na busca. Como exemplo,
-`GET /users?q=joao` deve retornar apenas Usuários cujos Nomes comecem com a string **joao**. 
-Não há a necessidade de lidar com acentos.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Outra funcionalidade do sistema deve ser a possiblidade de contas poderem realizar **Transações (Transactions)**. Cada transação deverá ter um valor, positivo ou negativo, além de um dos cinco `Tipos` de operação que fazemos: 
-- Pagamento de Conta
-- Depósito
-- Transferência
-- Recarga de Celular
-- Compra (Crédito)
+## Learning Laravel
 
-O sistema precisará listar todas as informações de uma conta, incluindo as suas transações e usuários relacionados em um único endpoint: `/accounts/{id}`.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-Sua tarefa é desenvolver uma API capaz de cumprir com todos os requisitos especificados. 
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-## Instruções
-Para ajudar no desenvolvimento e evitar perda de tempo com código *boilerplate*, decidimos prover uma estrutura básica para o desenvolvimento da sua solução utilizando a plataforma PHP (Laravel 7.* + Postgres).
-A estrutura **deve** ser utilizada no desenvolvimento da sua solução. 
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-Você poderá fazer um fork nesse repositório e trabalhar a partir daí.
+### Premium Partners
 
-O primeiro passo para o início do desenvolvimento é escolher qual tecnologia de banco de dados será utilizada no seu projeto. Dependendo da escolha, existem algumas alterações que devem ser feitas no seu projeto base.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[CMS Max](https://www.cmsmax.com/)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
 
-- Copie o arquivo `.env.example` e salve como `.env`.
+## Contributing
 
-Para verificar se a sua solução está funcionando, utilize o comando `docker-compose up --build` a partir do diretório raiz do projeto. 
-A sua API estará mapeada para a porta `8000`do seu host local. Uma requisição `GET localhost:8000/` vai retornar a versão do Laravel em execução.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-**IMPORTANTE:** após a execução do `docker-compose up -d`, na pasta do projeto, execute o comando `docker-compose run web composer install` e em seguida `docker-compose run web php artisan key:generate`.
-Quando o volume atual é mapeado para dentro do container, ele sobrescreve a pasta com as dependências instaladas pelo composer, por isso o comando é necessário. 
+## Code of Conduct
 
-## Avaliação
-A avaliação da sua solução será constituída de duas etapas principais: **Correção objetiva** e **Correção qualitativa**. 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-Caso você não se sinta à vontade com a arquitetura proposta, você pode apresentar sua solução utilizando frameworks diferentes. 
-Porém, nesse caso, uma entrevista de **Code Review** será necessária para a avaliação da sua solução.
+## Security Vulnerabilities
 
-A correção objetiva será realizada através da utilização de um script de correção automatizada. A correção qualitativa levará em conta os seguintes critérios:
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-* Modelagem de Dados
-* Domínio da Linguagem
-* Legibilidade do Código
-* Estrutura do Código
-* Organização do Código
-* Design Patterns
-* Manutenibilidade do Código
-* Diferenciais: Testes Unitários e Cobertura de Testes
+## License
 
-## Como submeter
-Ao finalizar envie uma chamada para o nosso slack (a url está no e-mail. Se não a tiver, pergunte ao seu(sua) recrutador(a)) com seu Nome, email e link para o repositório com a solução do desafio. 
-Caso já esteja em processo de avaliação, é interessante também informar o(a) seu(sua) recrutador(a) sobre a conclusão desta etapa.
-
-**Lembre-se de não enviar arquivos compilados e configurações de IDE ao submeter a sua solução.** 
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

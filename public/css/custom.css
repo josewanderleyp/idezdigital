@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* CUSTOM CSS BY ALAN */
+
+.content-wrapper>.content {
+  padding: 0 .8rem;
+}
+
+.info-box .info-box-number {
+  margin-top: -0.4rem;
+}
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open {
+  background-color: rgba(255,255,255,.1);
+}
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link {
+  background-color: transparent;
+}
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+  background-color: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.3);
+}
+
+label {
+  margin-bottom: .2rem;
+  /* font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 400; */
+}
+
+/* SKIN PURPLE */
+a {
+  color: #6e46c4;
+}
+a:hover,
+a:focus {
+  color: #5a3ab6;
+}
+.btn-primary {
+  background-color: #6e46c4;
+  border-color: #6e46c4;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: #5a3ab6;
+  border-color: #5a3ab6;
+}
+.card-primary.card-outline {
+  border-top: 3px solid #6e46c4;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #6e46c4;
+}
