@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::namespace('\App\Http\Controllers')->group(function () {
+    Route::resources([
+        'accounts' => 'Accounts\AccountsController',
+        'users' => 'Users\UsersController',
+    ]);
+});
